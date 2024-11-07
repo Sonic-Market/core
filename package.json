@@ -1,5 +1,5 @@
 {
-  "name": "v2-core",
+  "name": "core",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -17,19 +17,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/clober-dex/v2-core.git"
+    "url": "git+https://github.com/Sonic-Market/core.git"
   },
   "bugs": {
-    "url": "https://github.com/clober-dex/v2-core/issues"
+    "url": "https://github.com/Sonic-Market/core/issues"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "files": [],
   "devDependencies": {
-    "@matterlabs/hardhat-zksync-deploy": "^1.5.0",
-    "@matterlabs/hardhat-zksync-solc": "^1.2.4",
-    "@matterlabs/hardhat-zksync-verify": "^1.6.0",
     "@nomicfoundation/hardhat-foundry": "^1.1.2",
     "@nomicfoundation/hardhat-verify": "^2.0.10",
     "@nomicfoundation/hardhat-viem": "^2.0.4",

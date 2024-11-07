@@ -4,7 +4,7 @@ pragma solidity ^0.8.23;
 
 import {IHooks} from "../interfaces/IHooks.sol";
 
-/// @author Clober
+/// @author Sonic Market
 /// @author Modified from Uniswap V4 (https://github.com/Uniswap/v4-core/tree/98680ebc1a654120e995d53a5b10ec6fe153066f)
 /// @notice Contains data about pool lockers.
 

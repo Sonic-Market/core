@@ -7,7 +7,7 @@ import {IBookManager} from "../interfaces/IBookManager.sol";
 import {IHooks} from "../interfaces/IHooks.sol";
 import {OrderId} from "../libraries/OrderId.sol";
 
-/// @author Clober
+/// @author Sonic Market
 /// @author Modified from Uniswap V4 (https://github.com/Uniswap/v4-core/blob/1f350fa95e862ba8c56c8ff7e146d47c9043465e)
 /// @notice V4 decides whether to invoke specific hooks by inspecting the leading bits of the address that
 /// the hooks contract is deployed to.

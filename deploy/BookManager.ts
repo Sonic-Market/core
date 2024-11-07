@@ -38,10 +38,10 @@ const deployFunction: DeployFunction = async function (hre: HardhatRuntimeEnviro
     [
       owner,
       defaultProvider,
-      `https://clober.io/api/nft/chains/${chain.id}/orders/`,
-      `https://clober.io/api/contract/chains/${chain.id}`,
-      'Clober Orderbook Maker Order',
-      'CLOB-ORDER',
+      `https://sonic.market/api/nft/chains/${chain.id}/orders/`,
+      `https://sonic.market/api/contract/chains/${chain.id}`,
+      'Sonic Market Orderbook Maker Order',
+      'SONIC-MARKET-ORDER',
     ],
     {
       libraries: {

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: -
-// License: https://license.clober.io/LICENSE.pdf
+// License: https://license.sonic.market/LICENSE.pdf
 
 pragma solidity ^0.8.0;
 
@@ -10,7 +10,7 @@ import "./DirtyUint64.sol";
  * 🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲
  *
  *                   Segmented Segment Tree
- *                                by Clober
+ *                          by Sonic Market
  *
  * ____________/\\\_______________/\\\\\____________/\\\____
  *  __________/\\\\\___________/\\\\////___________/\\\\\____
