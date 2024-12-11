@@ -1,14 +1,11 @@
 import { HardhatRuntimeEnvironment } from 'hardhat/types'
 import { DeployFunction } from 'hardhat-deploy/types'
-import { getChain, isDevelopmentNetwork } from '@nomicfoundation/hardhat-viem/internal/chains'
-import { deployCreate3WithVerify, deployWithVerify } from '../utils'
-import { base } from 'viem/chains'
+import { deployWithVerify } from '../utils'
 import { Address } from 'viem'
 
 const deployFunction: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deployments, getNamedAccounts, network } = hre
   const deployer = (await getNamedAccounts())['deployer'] as Address
-  const chain = await getChain(network.provider)
 
   if (await deployments.getOrNull('BookManager')) {
     return
@@ -19,27 +16,17 @@ const deployFunction: DeployFunction = async function (hre: HardhatRuntimeEnviro
     bookLibraryAddress = await deployWithVerify(hre, 'Book', [])
   }
 
-  let owner: Address = '0x'
-  let defaultProvider: Address = '0x'
-  if (chain.testnet || isDevelopmentNetwork(chain.id)) {
-    owner = defaultProvider = deployer
-  } else if (chain.id === base.id) {
-    owner = '0xfb976Bae0b3Ef71843F1c6c63da7Df2e44B3836d' // Safe
-    defaultProvider = '0xfc5899d93df81ca11583bee03865b7b13ce093a7' // Treasury
-  } else {
-    throw new Error('Unknown chain')
-  }
+  let owner: Address = deployer
+  let defaultProvider: Address = '0xcc92364b6b886158e71fd4e4da5c682d33d1491e'
 
-  const entropy = 1000n
-  await deployCreate3WithVerify(
-    deployer,
-    entropy,
+  await deployWithVerify(
+    hre,
     'BookManager',
     [
       owner,
       defaultProvider,
-      `https://sonic.market/api/nft/chains/${chain.id}/orders/`,
-      `https://sonic.market/api/contract/chains/${chain.id}`,
+      `https://sonic.market/api/nft/chains/146/orders/`,
+      `https://sonic.market/api/contract/chains/146`,
       'Sonic Market Orderbook Maker Order',
       'SONIC-MARKET-ORDER',
     ],
