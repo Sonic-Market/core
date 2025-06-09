@@ -54,10 +54,7 @@ const loadPrivateKeyFromKeyfile = () => {
 
   const prodNetworks = new Set<number>([
     networkInfos.mainnet.id,
-    networkInfos.arbitrum.id,
-    networkInfos.base.id,
-    networkInfos.zkSync.id,
-    146,
+    networkInfos.sonic.id,
   ])
   if (network && prodNetworks.has(network)) {
     if (privateKey) {
@@ -98,9 +95,9 @@ const config: HardhatConfig = {
   },
   defaultNetwork: 'hardhat',
   networks: {
-    [146]: {
+    [networkInfos.sonic.id]: {
       url: 'https://rpc.soniclabs.com',
-      chainId: 146,
+      chainId: networkInfos.sonic.id,
       accounts: [loadPrivateKeyFromKeyfile()],
       gas: 'auto',
       gasPrice: 'auto',
@@ -178,7 +175,7 @@ const config: HardhatConfig = {
   },
   etherscan: {
     apiKey: {
-      [146]: 'routescan',
+      [networkInfos.sonic.id]: 'routescan',
     },
     customChains: [
       {
